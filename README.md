@@ -14,4 +14,4 @@ Third-party skills stay managed by `npx skills` (see `~/.agents/.skill-lock.json
 
 ## Commit messages
 
-`<type>(<skill>): <summary>`, e.g. `feat(add-issue): add issue templates`. See `CLAUDE.md` for the types.
+`<type>(<skill>): <summary>`, e.g. `feat(add-issue): add issue templates`. See `AGENTS.md` for the types.
