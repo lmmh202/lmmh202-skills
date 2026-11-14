@@ -18,7 +18,7 @@ Personal agent skills. Each folder in `skills/` is one skill with a `SKILL.md`.
 
 | Skill | What it does |
 |---|---|
-| [`disk-cleanup`](skills/disk-cleanup/SKILL.md) | Free disk space to a target (default 100 GB) by removing only regenerable build output and caches. Runs only when invoked as `/disk-cleanup`; adapted from kdy1/kdy1-scripts |
+| [`disk-cleanup`](skills/disk-cleanup/SKILL.md) | Preview, then remove regenerable build output and caches (optional target such as `200GB`). Runs only when invoked as `/disk-cleanup`; adapted from kdy1/kdy1-scripts |
 
 ### Study
 

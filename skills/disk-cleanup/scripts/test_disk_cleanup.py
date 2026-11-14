@@ -155,6 +155,16 @@ class CleanerTest(Fixture):
         self.assertGreater(report["actions"][0]["bytes"], 0)
         self.assertFalse(report["met"])
 
+    def test_no_target_removes_every_idle_candidate(self):
+        first = self.project("first", age=9 * DAY)
+        second = self.project("second", age=5 * DAY)
+        recent = self.project("recent", age=1)
+        report = self.run_cleaner(lambda _: 500, None)
+        self.assertIsNone(report["met"])
+        self.assertFalse((first / "target").exists())
+        self.assertFalse((second / "target").exists())
+        self.assertTrue((recent / "target").exists())
+
     def test_target_already_met_does_nothing(self):
         project = self.project("a", age=9 * DAY)
         report = self.run_cleaner(lambda _: 500, 400)

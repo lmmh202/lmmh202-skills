@@ -259,7 +259,8 @@ class Cleaner:
         return free_bytes(self.volume) + self.simulated
 
     def met(self):
-        return self.free() >= self.target
+        # With no target, clean everything in scope.
+        return self.target is not None and self.free() >= self.target
 
     def record(self, tier, name, before, status, detail=None):
         freed = self.free() - before if not self.dry_run else None
@@ -366,7 +367,7 @@ class Cleaner:
             "initialFreeBytes": self.initial,
             "finalFreeBytes": final,
             "freedBytes": final - self.initial,
-            "met": final >= self.target,
+            "met": None if self.target is None else final >= self.target,
             "actions": self.actions,
             "skippedCount": len(self.skipped),
             "skippedByReason": reasons,
@@ -380,10 +381,11 @@ def gb(value):
 
 
 def summary(report, top=10):
+    goal = ("no target" if report["targetBytes"] is None else
+            f"target {gb(report['targetBytes'])}, {'met' if report['met'] else 'NOT met'}")
     lines = [
         f"{'Dry run: ' if report['dryRun'] else ''}free {gb(report['initialFreeBytes'])} -> "
-        f"{gb(report['finalFreeBytes'])} (target {gb(report['targetBytes'])}, "
-        f"{'met' if report['met'] else 'NOT met'})",
+        f"{gb(report['finalFreeBytes'])} ({goal})",
     ]
     tiers = {}
     for action in report["actions"]:
@@ -406,7 +408,8 @@ def summary(report, top=10):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=["status", "run"])
-    parser.add_argument("--target-gb", type=float, default=100, help="required free space in decimal GB")
+    parser.add_argument("--target-gb", type=float, default=None,
+                        help="stop once this much is free (decimal GB); omit to clean everything in scope")
     parser.add_argument("--volume", default=os.path.expanduser("~"), help="path on the volume to measure")
     parser.add_argument("--dry-run", action="store_true", help="measure candidates without deleting")
     parser.add_argument("--exclude", action="append", default=[], help="never touch this path")
@@ -416,12 +419,13 @@ def main(argv=None):
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
 
-    target = int(args.target_gb * GB)
+    target = None if args.target_gb is None else int(args.target_gb * GB)
     if args.command == "status":
         free = free_bytes(args.volume)
-        status = {"volume": args.volume, "targetBytes": target, "freeBytes": free, "met": free >= target}
-        print(json.dumps(status) if args.json else
-              f"free {gb(free)} (target {gb(target)}, {'met' if status['met'] else 'NOT met'})")
+        met = None if target is None else free >= target
+        status = {"volume": args.volume, "targetBytes": target, "freeBytes": free, "met": met}
+        goal = "no target" if target is None else f"target {gb(target)}, {'met' if met else 'NOT met'}"
+        print(json.dumps(status) if args.json else f"free {gb(free)} ({goal})")
         return 0
 
     excludes = [expand(path).resolve() for path in args.exclude] + [Path.cwd().resolve()]
@@ -435,7 +439,7 @@ def main(argv=None):
             cleaner.artifacts("project-artifacts", PROJECT_ROOTS, args.project_idle_hours, cwds, now)
     report = cleaner.report(args.skipped_limit)
     print(json.dumps(report, indent=2) if args.json else summary(report))
-    return 0 if report["met"] else 2
+    return 2 if report["met"] is False else 0
 
 
 if __name__ == "__main__":
