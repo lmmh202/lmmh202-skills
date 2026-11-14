@@ -1,12 +1,12 @@
 ---
-name: create-wiki-entry
+name: add-wiki
 description: >-
   Create or edit a wiki or glossary entry in the user's intended repository,
   then review and commit the change. Use when asked to add, write, or update a
   wiki term; follow that repository's own format and instructions.
 ---
 
-# Create Wiki Entry
+# Add Wiki
 
 Create the requested wiki entry in the intended repository, make a focused local commit, and report the result. Push only after the user approves the reported commit.
 

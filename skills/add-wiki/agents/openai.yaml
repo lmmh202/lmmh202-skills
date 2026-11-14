@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Wiki"
+  short_description: "Write and commit a wiki entry in the right repo"
+  default_prompt: "Use $add-wiki to create or update a wiki entry in the intended repository."

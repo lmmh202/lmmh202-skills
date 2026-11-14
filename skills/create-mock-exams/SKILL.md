@@ -1,9 +1,9 @@
 ---
-name: exam-question-maker
+name: create-mock-exams
 description: Create an expected exam paper (예상문제, 예상 시험지) from lecture materials, the exam types the user reports, and optionally a past exam (족보) whose format must be matched. Questions are always in English; all solutions come after the last question and explain each question and its answer in Korean. Use when the user asks for 예상문제, 예상 시험지, mock exams, or practice exams for a course.
 ---
 
-# Exam Question Maker
+# Create Mock Exams
 
 Write an expected exam paper for the user's course. Base it on the lecture materials and on what the user says will appear on the exam. If the user gives a past exam (족보), match its format exactly. Always use this layout: every question in English first, then every solution in Korean at the end.
 
