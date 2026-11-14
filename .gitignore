@@ -1,3 +1,4 @@
 .DS_Store
 *.swp
 .trash/
+__pycache__/
