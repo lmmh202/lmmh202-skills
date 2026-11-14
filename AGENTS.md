@@ -17,3 +17,7 @@ Use Conventional Commits with the skill name as the scope:
 One skill per commit. Write the summary in English, lowercase, imperative, no trailing period.
 
 `sync.sh` makes hourly fallback commits (`chore(<skill>): sync changes`) for anything left uncommitted; commit intentional changes yourself with a proper type first.
+
+## Skill list
+
+When you add, rename, or remove a skill, update the skill table in `README.md` in the same commit.

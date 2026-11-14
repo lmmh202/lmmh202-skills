@@ -2,6 +2,25 @@
 
 Personal agent skills. Each folder in `skills/` is one skill with a `SKILL.md`.
 
+## Skills
+
+### GitHub
+
+| Skill | What it does |
+|---|---|
+| [`add-issue`](skills/add-issue/SKILL.md) | Draft and open a Bug / Feature / Task issue in Korean, asking which items are still unverified before writing them |
+| [`create-pr`](skills/create-pr/SKILL.md) | Draft and open a PR that builds on its linked issue, with a before/after screenshot table and user-confirmed manual checks |
+| [`write-comment`](skills/write-comment/SKILL.md) | Draft and post PR/issue comments: review replies, verification reports, reviews, policy questions |
+| [`add-wiki`](skills/add-wiki/SKILL.md) | Create or edit a wiki or glossary entry in the intended repository, then commit it |
+| [`omit-coauthors`](skills/omit-coauthors/SKILL.md) | Never add a `Co-authored-by` trailer to commits or PRs |
+
+### Study
+
+| Skill | What it does |
+|---|---|
+| [`explain-lecture-slides`](skills/explain-lecture-slides/SKILL.md) | Translate lecture slides into Korean and teach them slide by slide, with worked solutions |
+| [`create-mock-exams`](skills/create-mock-exams/SKILL.md) | Make an expected exam paper from lecture materials and past exams (questions in English, solutions in Korean) |
+
 ## Install on a machine
 
 ```bash
