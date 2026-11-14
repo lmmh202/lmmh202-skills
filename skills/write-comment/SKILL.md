@@ -51,6 +51,7 @@ Use a table whenever a comment shows screens. One column per scenario, a caption
 - Commit: `[`28c1517`](https://github.com/<owner>/<repo>/commit/<full-sha>)`, never a bare SHA.
 - Code location: a permalink at a fixed commit, e.g. `[`VideoView.swift:463`](https://github.com/<owner>/<repo>/blob/<full-sha>/path/VideoView.swift#L463)`.
 - Issue or PR in another repository: `<owner>/<repo>#<n>` or a full URL.
+- Put a space after an issue or PR number before a Korean particle (`#85 에서`, `#120 의`), never `#85에서`. GitHub only turns the number into a link when it is followed by a space or punctuation.
 
 ## 4. Voice rules
 
