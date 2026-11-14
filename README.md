@@ -14,6 +14,12 @@ Personal agent skills. Each folder in `skills/` is one skill with a `SKILL.md`.
 | [`add-wiki`](skills/add-wiki/SKILL.md) | Create or edit a wiki or glossary entry in the intended repository, then commit it |
 | [`omit-coauthors`](skills/omit-coauthors/SKILL.md) | Never add a `Co-authored-by` trailer to commits or PRs |
 
+### Machine
+
+| Skill | What it does |
+|---|---|
+| [`disk-cleanup`](skills/disk-cleanup/SKILL.md) | Free disk space to a target (default 100 GB) by removing only regenerable build output and caches. Runs only when invoked as `/disk-cleanup`; adapted from kdy1/kdy1-scripts |
+
 ### Study
 
 | Skill | What it does |
