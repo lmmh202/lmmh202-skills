@@ -1,5 +1,5 @@
 ---
-name: no-coauthored-by
+name: omit-coauthors
 description: >-
   Never add a Co-authored-by trailer to commits, amends, or pull requests.
   Use on every git commit or amend, and whenever the user mentions
@@ -7,7 +7,7 @@ description: >-
   a co-author.
 ---
 
-# No Co-authored-by
+# Omit Coauthors
 
 Never write `Co-authored-by` in a commit message or pull request. That includes `Co-authored-by: Cursor <cursoragent@cursor.com>` and any other co-author trailer.
 
