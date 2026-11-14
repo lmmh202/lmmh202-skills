@@ -124,8 +124,6 @@ Always use full links so they work from any repository.
 
 ## 6. Voice
 
-Real PR bodies by the user are in `references/pr-examples.md`. Read them once per session before the first draft for voice and paragraph flow; follow this file where they differ (e.g. section layout, links).
-
 - `합니다`/`했습니다`. Plain cause-and-effect sentences joined with `그래서`, `이때`, `다만`, `함께`, `반면`.
 - Identifiers, files, settings, and values in backticks. Exact numbers and environments instead of vague claims ("잘 동작합니다" without saying where is not allowed).
 - Middle dot for short inline lists: "iOS 27.0·26.5·18.6".
