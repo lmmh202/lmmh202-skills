@@ -78,4 +78,9 @@ Keep the past exam's question types and difficulty, and change the specific valu
 
 - Save the paper as a Markdown file in the course folder of the user's notes repository, for example `<course>/midterm-expected-questions.md`. Follow the naming of files already in that folder.
 - Math in the file may use LaTeX only if the course's existing files do. Otherwise write formulas in plain text with Unicode, such as `S = G·e^(−2G)`.
+- **PDF or DOCX:** when the user asks for a PDF or a Word file, always leave answer space after every question so the user can solve it on the page. This space is blank or ruled; it never contains hints or answers.
+  - Size the space to the work the question needs: a few lines for a short answer, half a page for a calculation, and a full page for a derivation, a diagram, or an explanation of five sentences or more. Give each sub-part, such as (a) or (b), its own space.
+  - Keep a question and its answer space on the same page. Start a new page before a question that does not fit.
+  - Start the Solutions section on a new page so the user does not see the answers while solving.
+  - Keep the Markdown file without answer space; add the space only in the PDF or DOCX.
 - In chat, briefly summarize what the paper covers: which reported types it includes, and what you added and why. Do not paste the whole paper into chat. Commit only when the user asks.
