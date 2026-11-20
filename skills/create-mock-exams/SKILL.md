@@ -65,6 +65,8 @@ Keep the past exam's question types and difficulty, and change the specific valu
 - **Each solution is in Korean.** Keep technical terms in English where the lecture uses them, for example `vulnerable time` or `throughput`. Each solution has these parts:
   - **해석:** what the question asks, in Korean.
   - **풀이:** the full explanation, including formulas, every calculation step, diagrams (in fenced code blocks), and comparison tables where useful.
+    - Whenever a step uses a formula, first write the formula exactly as the source states it, with its source, for example `dB = 10·log₁₀(P₂/P₁)` (ch3.4 slide 7) or `T_c = DIFS + RTS + SIFS + CTS` (paper Eq. 15). Then, if the question needs another unknown, rearrange it step by step. Only after that, substitute the given values with their units and calculate.
+    - Never start a step with numbers alone, such as `5 × 10^0.4 = 12.56 mW` or `−10 / (−0.5) = 20 km`, without the formula they come from. Keep units through the calculation, and convert units in a separate, visible step.
   - **답:** the final answer, stated clearly. Bold the key numbers or terms.
 - Put shared formulas that many solutions use in a short block at the start of the Solutions section.
 
