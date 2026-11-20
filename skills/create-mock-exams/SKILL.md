@@ -79,7 +79,7 @@ Keep the past exam's question types and difficulty, and change the specific valu
 - Save the paper as a Markdown file in the course folder of the user's notes repository, for example `<course>/midterm-expected-questions.md`. Follow the naming of files already in that folder.
 - Math in the file may use LaTeX only if the course's existing files do. Otherwise write formulas in plain text with Unicode, such as `S = G·e^(−2G)`.
 - **PDF or DOCX:** when the user asks for a PDF or a Word file, always leave answer space after every question so the user can solve it on the page. This space is blank or ruled; it never contains hints or answers.
-  - Size the space to the work the question needs: a few lines for a short answer, half a page for a calculation, and a full page for a derivation, a diagram, or an explanation of five sentences or more. Give each sub-part, such as (a) or (b), its own space.
+  - Size each space from the written solution, not from the question type. Count the lines the solution needs for that question or sub-part (its calculation steps, diagram rows, and answer), and leave about that many ruled lines plus one or two. Do not round up to half or full pages; most short answers need only two to four lines. Give each sub-part, such as (a) or (b), its own space.
   - Keep a question and its answer space on the same page. Start a new page before a question that does not fit.
   - Start the Solutions section on a new page so the user does not see the answers while solving.
   - Keep the Markdown file without answer space; add the space only in the PDF or DOCX.
