@@ -26,6 +26,7 @@ Personal agent skills. Each folder in `skills/` is one skill with a `SKILL.md`.
 |---|---|
 | [`explain-lecture-slides`](skills/explain-lecture-slides/SKILL.md) | Translate lecture slides into Korean and teach them slide by slide, with worked solutions |
 | [`create-mock-exams`](skills/create-mock-exams/SKILL.md) | Make an expected exam paper from lecture materials and past exams (questions in English, solutions in Korean) |
+| [`create-report`](skills/create-report/SKILL.md) | Draft an assignment report .docx in the user's style (Korean by default, plain wording, no heading styles) from the spec and real results |
 
 ## Install on a machine
 
