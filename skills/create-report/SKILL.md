@@ -16,7 +16,7 @@ Write a report for one of the user's course assignments, using their own past re
 ## Language and wording
 
 - Write in **Korean** unless the spec or the user says otherwise (for example, "Submit the report in English"). If the report must be in English, keep the same structure, tone, and plain wording.
-- Write for an undergraduate reader. Use the terms from the lecture and the spec. Do not bring in harder terms the course has not used. When a technical idea is needed, say what it does in plain words, as the past reports do ("최대 풀링은 2×2 영역마다 가장 큰 값 하나를 남기는 방식이다").
+- Write for an undergraduate reader. Read the lecture notes for the topic (the user keeps them in `~/Documents/Lecture Notes/<course>/`) and use their terms and explanations. Do not bring in models, formulas, or claims the lecture does not cover, and do not state anything you have not checked against the output. Do not bring in harder terms the course has not used. When a technical idea is needed, say what it does in plain words, as the past reports do ("최대 풀링은 2×2 영역마다 가장 큰 값 하나를 남기는 방식이다").
 - Keep code identifiers, commands, function names, and log text in their original form (`kallsyms_lookup_name`, `np.corrcoef`, `dmesg`).
 - Use the plain written style: `~이다`, `~하였다`, `~했다`, `~확인하였다`. Do not use `~합니다` or `~요`. Use short declarative sentences, one idea per sentence, and no marketing words or exaggeration.
 - Follow these habits:
@@ -55,7 +55,8 @@ Build the .docx with `scripts/report.js` (docx-js). Its helpers already follow t
   - Plots and result figures get a caption centered below them, `Figure N. <short English description>`. Refer to each one in the text ("Figure 2는 …").
   - Terminal or log screenshots (as in OS assignments) get no caption. The paragraph before or after the screenshot says what it shows.
 - Tables: small centered tables for numbers that are compared (theory vs. sample, before vs. after), with a caption above (`Table N. …`).
-- Equations: one centered line in Cambria Math, written with Unicode (φ₁, ρₖ, √, ≈). Keep them short.
+- Equations: use real Word equations (OMML), both for centered equation lines and for symbols inside sentences. Do not type math with Unicode subscript characters (xₜ, ρₖ) in plain text. Keep equations short.
+- Use the keyboard hyphen `-` for minus signs in plain text and tables, not the Unicode minus `−`.
 
 Workflow:
 

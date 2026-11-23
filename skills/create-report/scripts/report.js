@@ -13,17 +13,15 @@ const FONT = "Malgun Gothic";
 const BODY = 20; // 10pt body text
 const LINE = { line: 300, after: 0 }; // about 17pt line pitch, as in the past reports
 
-// **bold** and _italic_ inline markup
+// **bold** inline markup (no _italic_: underscores in code names like max_lag must stay as text)
 function runs(text, base = {}) {
   const out = [];
-  const re = /(\*\*[^*]+\*\*|_[^_]+_)/g;
+  const re = /(\*\*[^*]+\*\*)/g;
   let last = 0, m;
   while ((m = re.exec(text))) {
     if (m.index > last) out.push(new TextRun({ text: text.slice(last, m.index), ...base }));
     const t = m[0];
-    out.push(t.startsWith("**")
-      ? new TextRun({ text: t.slice(2, -2), bold: true, ...base })
-      : new TextRun({ text: t.slice(1, -1), italics: true, ...base }));
+    out.push(new TextRun({ text: t.slice(2, -2), bold: true, ...base }));
     last = m.index + t.length;
   }
   if (last < text.length) out.push(new TextRun({ text: text.slice(last), ...base }));
