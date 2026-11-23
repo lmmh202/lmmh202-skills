@@ -32,15 +32,15 @@ function runs(text, base = {}) {
 
 // Headings are plain Normal paragraphs with bold runs, never Heading styles.
 const section = (text) => new Paragraph({            // "1. Introduction": 12pt bold
-  keepNext: true, spacing: { before: 240, after: 120 },
+  spacing: { before: 0, after: 0, line: 300 },
   children: [new TextRun({ text, bold: true, size: 24 })],
 });
 const sub = (text) => new Paragraph({                // "Assignment2-1", "3.2 ...": 11pt bold
-  keepNext: true, spacing: { before: 160, after: 80 },
+  spacing: { before: 0, after: 0, line: 300 },
   children: [new TextRun({ text, bold: true, size: 22 })],
 });
 const minor = (text) => new Paragraph({              // "시스템 콜 등록", "a. ...": 10pt bold
-  keepNext: true, spacing: { before: 120, after: 40 },
+  spacing: { before: 0, after: 0, line: 300 },
   children: [new TextRun({ text, bold: true })],
 });
 const p = (text) => new Paragraph({ spacing: { ...LINE, after: 120 }, alignment: AlignmentType.JUSTIFIED, children: runs(text) });
@@ -56,7 +56,7 @@ function fig(file, caption, widthPx = 600) {
   // PNG size from the IHDR chunk
   const w = buf.readUInt32BE(16), h = buf.readUInt32BE(20);
   const out = [new Paragraph({
-    alignment: AlignmentType.CENTER, spacing: { before: 120, after: caption ? 60 : 120 }, keepNext: !!caption,
+    alignment: AlignmentType.CENTER, spacing: { before: 120, after: caption ? 60 : 120 },
     children: [new ImageRun({ type: "png", data: buf, transformation: { width: widthPx, height: Math.round(widthPx * h / w) } })],
   })];
   if (caption) out.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 160 }, children: [new TextRun({ text: caption })] }));
@@ -74,7 +74,7 @@ function table(header, rows, widths, caption) {
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, bold: head, size: 18 })] })],
   });
   const out = [];
-  if (caption) out.push(new Paragraph({ alignment: AlignmentType.CENTER, keepNext: true, spacing: { before: 120, after: 60 }, children: [new TextRun({ text: caption })] }));
+  if (caption) out.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 }, children: [new TextRun({ text: caption })] }));
   out.push(new Table({
     width: { size: widths.reduce((a, c) => a + c, 0), type: WidthType.DXA },
     columnWidths: widths, alignment: AlignmentType.CENTER,
