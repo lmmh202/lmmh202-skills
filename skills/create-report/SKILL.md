@@ -19,6 +19,7 @@ Write a report for one of the user's course assignments, using their own past re
 - Write for an undergraduate reader. Read the lecture notes for the topic (the user keeps them in `~/Documents/Lecture Notes/<course>/`) and use their terms and explanations. Do not bring in models, formulas, or claims the lecture does not cover, and do not state anything you have not checked against the output. Do not bring in harder terms the course has not used. When a technical idea is needed, say what it does in plain words, as the past reports do ("최대 풀링은 2×2 영역마다 가장 큰 값 하나를 남기는 방식이다").
 - Keep code identifiers, commands, function names, and log text in their original form (`kallsyms_lookup_name`, `np.corrcoef`, `dmesg`).
 - Use the plain written style: `~이다`, `~하였다`, `~했다`, `~확인하였다`. Do not use `~합니다` or `~요`. Use short declarative sentences, one idea per sentence, and no marketing words or exaggeration.
+- Never use the middle dot `·` anywhere in the report, including tables and placeholders. The user finds it makes a report read as AI-written. Join words with a comma or `와/과` ("코드, 데이터, 힙 주소", "R 비트와 D 비트"), and write products as `×` ("0.4 × 공개").
 - Follow these habits:
   - **Open each part by saying what was done:** "커널 메시지 큐 시스템 콜 os_mq를 번호 336번에 등록하고, 사용자 공간 셸 mqsh로 open / send / recv / close를 시연하였다."
   - **Give the reason right after a design choice:** "잠들기 전에는 스핀락을 해제한다. 락을 든 채 잠들면 상대 recv가 큐를 비울 수 없기 때문이다."
